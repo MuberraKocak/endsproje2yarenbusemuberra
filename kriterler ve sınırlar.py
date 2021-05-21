@@ -4,5 +4,28 @@
 #Her adayın puanını hesaplayacağız.
 #and, or, if, elif, else kullanarak değerlendirme yapacağız.
 
-TCno=int(input("TC No: "))
+#kullanıcının kişisel bilgileri
+aday=1
+while aday<=10:
+  TCno=int(input("TC No: "))
+  isim=input("isim: ")
+  soyisim=input("soyisim: ")
+aday +=1
+  
+#yeterlilik alan göstergeleri
+akademik_mesleki yeterlilikler =  ("genel not ortalaması", "bilimsel projelerden/yarışmalardan kazanılmış ödüller", "yabancı dil")
+sanatsal_sosyal yeterlilikler = ("sosyal projelerden/yarışmalardan kazanılmış ödüller")
+sportif_yeterlilikler = ("profesyonel sporcu lisansına sahip olmak")
+
+#yeterlilik alanı cevapları
+notort=float(input("not ortalamanız: "))
+
+
+
+#toplam ağırlıklı puan (tap) hesaplaması
+
+
+
+#ağırlıklı toplam seçme puanı (atsp) hesaplanması
+
 
