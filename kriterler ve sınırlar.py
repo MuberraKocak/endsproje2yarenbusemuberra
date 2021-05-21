@@ -10,11 +10,13 @@ while aday<=10:
   TCno=int(input("TC No: "))
   isim=input("isim: ")
   soyisim=input("soyisim: ")
+  aday_bilgisi=[TCno, isim, soyisim]
+  print(f'aday {aday} aday bilgileri: {aday_bilgisi}')
 aday +=1
   
 #yeterlilik alan göstergeleri
-akademik_mesleki yeterlilikler =  ("genel not ortalaması", "bilimsel projelerden/yarışmalardan kazanılmış ödüller", "yabancı dil")
-sanatsal_sosyal yeterlilikler = ("sosyal projelerden/yarışmalardan kazanılmış ödüller")
+akademik_mesleki_yeterlilikler =  ("genel not ortalaması", "bilimsel projelerden/yarışmalardan kazanılmış ödüller", "yabancı dil")
+sanatsal_sosyal_yeterlilikler = ("sosyal projelerden/yarışmalardan kazanılmış ödüller")
 sportif_yeterlilikler = ("profesyonel sporcu lisansına sahip olmak")
 
 #yeterlilik alanı cevapları
