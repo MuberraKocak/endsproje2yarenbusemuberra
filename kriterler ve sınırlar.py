@@ -10,8 +10,7 @@ while aday<=10:
   TCno=int(input("TC No: "))
   isim=input("isim: ")
   soyisim=input("soyisim: ")
-  aday_bilgisi=[TCno, isim, soyisim]
-  print(f'aday {aday} aday bilgileri: {aday_bilgisi}')
+  print(f'aday {aday} TC No: {TCno} isim: {isim} soyisim: {soyisim}')
 aday +=1
   
 #yeterlilik alan göstergeleri
