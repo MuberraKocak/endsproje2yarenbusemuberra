@@ -6,30 +6,85 @@
 #Her adayın puanını hesaplayacağız.
 #and, or, if, elif, else kullanarak değerlendirme yapacağız.
 
-#kullanıcının kişisel bilgileri
+#yeterlilik alan göstergeleri
+akademik_mesleki_yeterlilikler =  ("genel not ortalaması", "Bilimsel projelerden/yarışmalardan ödül kazandınız mı?", "ingilizce seviyenizi sayısal olarak belirtiniz (1:Yok, 2:Başlangıç, 3:Orta, 4:İyi, 5:Çok İyi): ")
+notOrtAgirlik = 0.50
+bilimselOdulAgirlik = 0.20
+ingilizceSeviyesi = 0.30
+akademikYeterlilikAgirlik = 0.6
+
+sanatsal_sosyal_yeterlilikler = ("sosyal projelerden/yarışmalardan kazanılmış ödüller")
+sosyalOdulAgirlik = 0.2
+
+sportif_yeterlilikler = ("profesyonel sporcu lisansına sahip olmak")
+sportifOdulAgirlik = 0.2
+
+#toplam ağırlıklı puan (tap) hesaplaması
+
+#ağırlıklı toplam seçme puanı (atsp) hesaplanması
+
+#kullanıcıdan bilgilerin alınması ve puan hesaplamaları
 aday=1
 while aday<=10:
   TCno=int(input("TC No: "))
   isim=input("isim: ")
   soyisim=input("soyisim: ")
-  print(f'aday {aday} TC No: {TCno} isim: {isim} soyisim: {soyisim}')
-aday +=1
+
+  notOrt=float(input("genel not ortalamanızı giriniz: "))
+  if (notOrt > 3.49 and notOrt <= 4.00) or (notOrt > 87.25 and notOrt <= 100.00):
+    notOrtPuan = 100
+  elif (notOrt > 2.99 and notOrt <= 3.49) or (notOrt > 74.75 and notOrt <= 87.25):
+    notOrtPuan = 85
+  elif (notOrt > 2.50 and notOrt <= 2.99) or (notOrt > 62.50 and notOrt <= 74.75):
+    notOrtPuan = 70
+  elif (notOrt > 2.00 and notOrt <= 2.50) or (notOrt > 50.00 and notOrt <= 62.50):
+    norOrtPuan = 55
+  elif (notOrt >= 1.00 and notOrt <= 2.00) or (notOrt >= 25 and notOrt <= 50.00):
+    norOrtPuan = 20
+  else:
+    print("Lütfen girdiğiniz not ortalamasını kontrol edip tekrar giriniz!")
+  print(f'norOrtPuan={notOrtPuan}')
   
-#yeterlilik alan göstergeleri
-akademik_mesleki_yeterlilikler =  ("genel not ortalaması", "bilimsel projelerden/yarışmalardan kazanılmış ödüller", "yabancı dil")
-sanatsal_sosyal_yeterlilikler = ("sosyal projelerden/yarışmalardan kazanılmış ödüller")
-sportif_yeterlilikler = ("profesyonel sporcu lisansına sahip olmak")
+  bilimselOdul = bool(input("bilimsel projelerden/yarışmalardan ödül aldınız mı?: "))
+  if bilimselOdul == True:
+    bilimselOdulDogrulama = (input("Ödül aldığınızı gösterir bir belgeyi yükleyiniz.")
+    if bilimselOdulDogrulama == True:
+      bilimselOdulPuan = 100
+    else:
+      bilimselOdulDogrulamaPuan=0
+  
+  ingilizceSeviyesi = int(input("ingilizce seviyenizi sayısal olarak belirtiniz (1:Yok, 2:Başlangıç, 3:Orta, 4:İyi, 5:Çok İyi): "))
+  if ingilizceSeviyesi == 5:
+    ingilizceSeviyesiPuan = 100
+  elif ingilizceSeviyesi == 4:
+    ingilizceSeviyesiPuan = 80
+  elif ingilizceSeviyesi == 3:
+    ingilizceSeviyesiPuan = 60
+  elif ingilizceSeviyesi == 2:
+    ingilizceSeviyesiPuan = 40
+  elif ingilizceSeviyesi == 1:
+    ingilizceSeviyesiPuan = 20
+  elif ingilizceSeviyesi == 0:
+    ingilizceSeviyesiPuan = 0
 
-#yeterlilik alanı cevapları
-notort=float(input("not ortalamanız: "))
+  #akademik_mesleki_yeterlilikTAP=
+  
+  sosyalOdul = bool(input("sosyal projelerden/yarışmalardan ödül aldınız mı?: "))
+  if sosyalOdul == True:
+    sosyalOdulDogrulama = (input("Ödül aldığınızı gösterir bir belgeyi yükleyiniz.")
+    if sosyalOdulDogrulama == True:
+      sosyalOdulPuan = 100
+    else:
+      sosyalOdulDogrulamaPuan = 0
 
+  sportifOdul = bool(input("profesyonel sporcu lisansınız bulunuyor mu?: "))
+  if sportifOdul == True:
+    sportifOdulDogrulama = (input("Ödül aldığınızı gösterir bir belgeyi yükleyiniz.")
+    if sportifOdulDogrulama == True:
+      sportifOdulPuan = 100
+    else:
+      sportifOdulDogrulamaPuan = 0
 
-
-#toplam ağırlıklı puan (tap) hesaplaması
-
-
-
-#ağırlıklı toplam seçme puanı (atsp) hesaplanması
-
-
-
+  print(f'{aday} aday TC No: {TCno} isim: {isim} soyisim: {soyisim}')
+  #, akademik mesleki yeterlilik puanı={akademik_mesleki_yeterlilikTAP}, sanatsal sosyal yeterlilik puanı={sanatsal_sosyal_yeterlilikTAP}, sportif yeterlilik puanı={sportif_yeterlilikTAP}
+aday +=1
