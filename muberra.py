@@ -10,7 +10,7 @@
 akademik_mesleki_yeterlilikler =  ("genel not ortalaması", "Bilimsel projelerden/yarışmalardan ödül kazandınız mı?", "ingilizce seviyenizi sayısal olarak belirtiniz (1:Yok, 2:Başlangıç, 3:Orta, 4:İyi, 5:Çok İyi): ")
 notOrtAgirlik = 0.50
 bilimselOdulAgirlik = 0.20
-ingilizceSeviyesi = 0.30
+ingilizceSeviyesiAgirlik = 0.30
 akademikYeterlilikAgirlik = 0.6
 
 sanatsal_sosyal_yeterlilikler = ("sosyal projelerden/yarışmalardan kazanılmış ödüller")
@@ -38,20 +38,21 @@ while aday<=10:
   elif (notOrt > 2.50 and notOrt <= 2.99) or (notOrt > 62.50 and notOrt <= 74.75):
     notOrtPuan = 70
   elif (notOrt > 2.00 and notOrt <= 2.50) or (notOrt > 50.00 and notOrt <= 62.50):
-    norOrtPuan = 55
+    notOrtPuan = 55
   elif (notOrt >= 1.00 and notOrt <= 2.00) or (notOrt >= 25 and notOrt <= 50.00):
-    norOrtPuan = 20
+    notOrtPuan = 20
   else:
     print("Lütfen girdiğiniz not ortalamasını kontrol edip tekrar giriniz!")
   print(f'norOrtPuan={notOrtPuan}')
   
-  bilimselOdul = bool(input("bilimsel projelerden/yarışmalardan ödül aldınız mı?: "))
+  bilimselOdul = bool(input("bilimsel projelerden/yarışmalardan ödül aldınız mı?: ").upper)
   if bilimselOdul == True:
     bilimselOdulDogrulama = (input("Ödül aldığınızı gösterir bir belgeyi yükleyiniz.")
     if bilimselOdulDogrulama == True:
       bilimselOdulPuan = 100
-    else:
+      else:
       bilimselOdulDogrulamaPuan=0
+  print(f'bilimselOdulDogrulamaPuan={bilimselOdulDogrulamaPuan}')
   
   ingilizceSeviyesi = int(input("ingilizce seviyenizi sayısal olarak belirtiniz (1:Yok, 2:Başlangıç, 3:Orta, 4:İyi, 5:Çok İyi): "))
   if ingilizceSeviyesi == 5:
@@ -66,15 +67,15 @@ while aday<=10:
     ingilizceSeviyesiPuan = 20
   elif ingilizceSeviyesi == 0:
     ingilizceSeviyesiPuan = 0
-
-  #akademik_mesleki_yeterlilikTAP=
+  print(f'ingilizceSeviyesiPuan={ingilizceSeviyesiPuan}')
+  akademik_mesleki_yeterlilikTAP=(notOrtAgirlik*notOrt)+(bilimselOdulAgirlik*bilimselOdul)+(ingilizceSeviyesiAgirlik*ingilizceSeviyesiPuan)
   
   sosyalOdul = bool(input("sosyal projelerden/yarışmalardan ödül aldınız mı?: "))
   if sosyalOdul == True:
     sosyalOdulDogrulama = (input("Ödül aldığınızı gösterir bir belgeyi yükleyiniz.")
     if sosyalOdulDogrulama == True:
       sosyalOdulPuan = 100
-    else:
+  else:
       sosyalOdulDogrulamaPuan = 0
 
   sportifOdul = bool(input("profesyonel sporcu lisansınız bulunuyor mu?: "))
