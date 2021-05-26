@@ -1,10 +1,34 @@
-#MÜBERRA KOÇAK
-
-#Bahsedilen kriterlerin sınırlarını belirleyeceğiz.
-#TC no ile başvurulan sistemden yukarıda bahsedilen kriterlere ait bilgileri sistemden çekeceğiz.
-#Aday bilgilerini dosyaya kaydedeceğiz. (her aday için bir aday/başvuru no atanacak)
-#Her adayın puanını hesaplayacağız.
-#and, or, if, elif, else kullanarak değerlendirme yapacağız.
+#endustri projesi
+'''
+AŞAMA-1: Yeterlilik alan göstergelerinden 5 tanesi seçilir.
+AŞAMA-2: Belirlenen kriterlere ait -varsa- alt kriterler belirlenir.
+AŞAMA-3: Kriterlerin/Alt kriterlerin her biri için ağırlık belirlenir.
+AŞAMA-4: Aday numarası 1'den başlatılır.
+AŞAMA-5: Adayların TC kimlik no alınır, 
+         eğer karakter sayısı doğru değilse (11 rakam) adayın bilgisini kontrol edip düzeltmesi 
+         için uyarı mesajı yazdırılır.
+AŞAMA-6: Adayların isim ve soyisim bilgileri alınır,
+        eğer bu sorulara yanıt verilmezse adayın ilgili alan için geçerli bir bilgi girmesi için 
+        uyarı mesajı yazdırılır.
+AŞAMA-7: Adaylardan genel not ortalaması bilgisini girmesi istenir. Alınan bilgi float tipine dönüştürülür.
+         Not ortalaması için belirlenene sınırlara göre if-elif-else koşulları kullanılarak adayın 
+         girdiği notun bulunduğu aralık tespit edilir.
+         İlgili aralık için tanımlanan puan adayın not ortalaması puanı olarak kaydedilir.
+AŞAMA-8: Adaylara bilimsel projelerden/yarışmalardan ödül alıp almadığı sorulur,
+         "evet/hayır" biçiminde cevap vermediyse adayın ilgili alana geçerli bir bilgi girmesi 
+         için uyarı mesajı yazdırılır.           
+AŞAMA-9: Adaylardan ingilizce seviyesini sayısal olarak belirtmesi isternir 
+         (1:Yok, 2:Başlangıç, 3:Orta, 4:İyi, 5:Çok İyi)
+        eğer girilen bilgi doğru değilse adaya bilgisini kontrol edip düzeltmesi
+        için uyarı mesajı yazdırılır.
+AŞAMA-10: Adaylara sanatsal/sosyal projelerden/yarışmalardan ödül alıp almadığı sorulur,
+         "evet/hayır" biçiminde cevap vermediyse adayın ilgili alana geçerli bir bilgi girmesi 
+         için uyarı mesajı yazdırılır.
+AŞAMA-11: Adaylara profesyonel sporcu lisansının olup olmadığı sorulur,
+         "evet/hayır" biçiminde cevap vermediyse adayın ilgili alana geçerli bir bilgi girmesi 
+         için uyarı mesajı yazdırılır.
+AŞAMA-12: Yeni aday listesine adayın bilgileri kaydedilir.
+AŞAMA-13: Aday bilgileri listesine de yeni aday listesi kaydedilir.'''
 
 #yeterlilik alan göstergeleri
 akademik_mesleki_yeterlilikler =  ("Genel not ortalaması", "Bilimsel projelerden/yarışmalar kazanılmış ödüller", "Yabacı dil")
